@@ -1,12 +1,12 @@
 #include <LiquidCrystal.h>
 
+#define Buz 10
+#define Sgas 9
+#define Lgreen 7
+#define Lred 6
+
 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-int Buz = 10; 
-int Sgas = 9;
-int Lgreen = 7;
-int Lred = 6;
-
 
 void setup() {
   pinMode(Sgas, INPUT);
