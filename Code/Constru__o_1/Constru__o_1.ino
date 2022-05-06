@@ -1,4 +1,3 @@
-
 #define Lred 6
 #define Lgreen 7
 #define Sgas 2
