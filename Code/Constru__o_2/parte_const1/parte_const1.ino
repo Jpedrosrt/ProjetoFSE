@@ -65,7 +65,7 @@ void loop() {
   }
   else {
     digitalWrite(Lgreen, HIGH);
-    //digitalWrite(Lred, LOW);
+    digitalWrite(Lred, LOW);
     noTone(Buz);
     lcd.setCursor(0,0);
     lcd.print("GAS NOT DETECTED");
