@@ -21,6 +21,7 @@ int typb = 13;
 int bvz;
 int b;
 int c;
+bool gaswasdetc = false;
 
 void setup() {
   lcd.begin(16, 2);
@@ -52,6 +53,7 @@ void loop() {
     lcd.setCursor(0,0);
     lcd.print("  GAS DETECTED  ");
     lcd.setCursor(0,1);
+    gaswasdetc = true;
     lcd.print("LEVEL: ");
     lcd.setCursor(7,1);
     lcd.print(c);
@@ -67,10 +69,15 @@ void loop() {
     digitalWrite(Lgreen, HIGH);
     digitalWrite(Lred, LOW);
     noTone(Buz);
-    lcd.setCursor(0,0);
-    lcd.print("GAS NOT DETECTED");
+    if(!gaswasdetc) { 
+      lcd.setCursor(0,0);
+      lcd.print("GAS NOT DETECTED");
+    } else {
+      lcd.setCursor(0,0);
+      lcd.print("GAS WAS DETECTED");
+    }
     lcd.setCursor(0,1);
-    lcd.print("NIVEL: ");
+    lcd.print("LEVEL: ");
     lcd.setCursor(7,1);
     lcd.print(c);
     if(c < 100 && c > 9) {
@@ -99,5 +106,6 @@ void calibrate() {
 }
 
 void valvrest() {
+  gaswasdetc = false;
   digitalWrite(valv, LOW);
 }
