@@ -29,7 +29,6 @@ bool gaswasdetc = false;
 bool aux = false;
 
 void setup() {
-  Serial.begin(9600);
   lcd.begin(16, 2);
   lcd.print("Detector de");
   lcd.setCursor(12,1);
